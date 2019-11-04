@@ -32,11 +32,22 @@ function AFBanner () {
         var sub1 = getParam("af_sub1", settings.sub1);
 
         // Deep link Settings
-        var af_dp = getParam("af_dp", settings.mobile_deeplink);       
-    
+        var af_dp = getParam("af_dp", settings.mobile_deeplink);
+
+        //Marketing Settings
+        var utm_source = getParam("utm_source", settings.utm_source);
+        var utm_medium = getParam("utm_medium", settings.utm_medium);
+        var utm_campaign = getParam("utm_campaign", settings.utm_campaign);
+        var utm_content = getParam("utm_content", settings.utm_content);
+        var utm_term = getParam("utm_term", settings.utm_term);
+        var landing_url = getParam("landing_url", settings.landing_url);
+        var referring_url = getParam("referring_url", settings.referring_url);
+        var marketing_channel = getParam("marketing_channel", settings.marketing_channel);
+
         // Build URL
         var url = baseUrl + media_source + campaign + adset + adset_id +
-                  ad + ad_id + site_id + sub1 + af_dp;
+                  ad + ad_id + site_id + sub1 + af_dp + utm_source + utm_medium +
+                  utm_campaign + utm_content + utm_term + landing_url + referring_url + marketing_channel;
         
         return url;
     };
@@ -98,7 +109,7 @@ function AFBanner () {
 
     this.validateSettings = function(settings) {
         
-        var missingSettings = []
+        var missingSettings = [];
         if (!settings.onelink_id) {
             missingSettings.push("OneLink ID");
         }
