@@ -27,7 +27,7 @@ function AFBanner () {
         var adset = getParam("af_adset", settings.adset);
         var adset_id = getParam("af_adset_id", settings.adset_id);       
         var ad = getParam("af_ad", settings.ad);
-        var ad_id = getParam("af_ad_id", settings.ad_id);
+        var af_ad_id = getParam("af_ad_id", settings.ad_id);
         var site_id = getParam("af_siteid", settings.site_id);
         var sub1 = getParam("af_sub1", settings.sub1);
 
@@ -43,11 +43,12 @@ function AFBanner () {
         var landing_url = getParam("landing_url", settings.landing_url);
         var referring_url = getParam("referring_url", settings.referring_url);
         var marketing_channel = getParam("marketing_channel", settings.marketing_channel);
+        var ad_id = getParam("ad_id", settings.ad_id);
 
         // Build URL
         var url = baseUrl + media_source + campaign + adset + adset_id +
                   ad + ad_id + site_id + sub1 + af_dp + utm_source + utm_medium +
-                  utm_campaign + utm_content + utm_term + landing_url + referring_url + marketing_channel;
+                  utm_campaign + utm_content + utm_term + landing_url + referring_url + marketing_channel + af_ad_id;
         
         return url;
     };
